@@ -4,6 +4,6 @@ if downloading first time run<br>
 ```
 then run<br>
 ```sh
-  npm eun dev
+  npm run dev
 ```
 in both frontend and backend folders
