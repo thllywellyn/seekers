@@ -1,5 +1,9 @@
 if downloading first time run<br>
-**npm install**<br>
+```sh
+  npm install
+```
 then run<br>
-**npm run dev**<br>
+```sh
+  npm eun dev
+```
 in both frontend and backend folders
