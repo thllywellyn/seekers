@@ -120,7 +120,7 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
         <p><span>Address:</span> {element.address}</p>
         <p><span>CoverLetter:</span> {element.coverLetter}</p>
       </div>
-      <div className="resume">
+      {/* <div className="resume">
         {element.resume && element.resume.url ? (
           <img
             src={element.resume.url}
@@ -130,7 +130,7 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
         ) : (
           <p>No resume available</p>
         )}
-      </div>
+      </div> */}
       <div className="btn_area">
         <button onClick={() => deleteApplication(element._id)}>
           Delete Application
@@ -150,7 +150,7 @@ const EmployerCard = ({ element, openModal }) => {
         <p><span>Address:</span> {element.address}</p>
         <p><span>CoverLetter:</span> {element.coverLetter}</p>
       </div>
-      <div className="resume">
+      {/* <div className="resume">
         {element.resume && element.resume.url ? (
           <img
             src={element.resume.url}
@@ -160,7 +160,7 @@ const EmployerCard = ({ element, openModal }) => {
         ) : (
           <p>No resume available</p>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

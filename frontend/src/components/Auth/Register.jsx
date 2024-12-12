@@ -22,6 +22,14 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
+    // Phone number validation
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+      toast.error("Phone number must be exactly 10 digits.");
+      return;
+    }
+
     try {
       const { data } = await axios.post(
         "http://localhost:4000/api/v1/user/register",
@@ -113,10 +121,13 @@ const Register = () => {
                 <label>Phone Number</label>
                 <div>
                   <input
-                    type="number"
+                    type="tel"
                     placeholder="Enter your phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    pattern="[0-9]{10}"
+                    title="Phone number must be exactly 10 digits."
+                    required
                   />
                   <FaPhoneFlip />
                 </div>

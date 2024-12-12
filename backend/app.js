@@ -8,6 +8,7 @@ import cors from "cors";
 import { errorMiddleware } from "./middlewares/error.js";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
+import analysisRoutes from "./routes/analysisRoutes.js";
 
 // Load environment variables
 config({ path: "./config/config.env" });
@@ -46,6 +47,7 @@ dbConnection();
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/job", jobRouter);
 app.use("/api/v1/application", applicationRouter);
+app.use("/api/v1/analysis", analysisRoutes);
 
 // Middleware: Error Handling
 app.use(errorMiddleware);

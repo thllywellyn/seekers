@@ -16,6 +16,7 @@ import MyApplications from "./components/Application/MyApplications";
 import PostJob from "./components/Job/PostJob";
 import NotFound from "./components/NotFound/NotFound";
 import MyJobs from "./components/Job/MyJobs";
+// import Analysis from "./components/Analysis/Analysis";
 
 const App = () => {
   const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
@@ -37,6 +38,19 @@ const App = () => {
     fetchUser();
   }, [isAuthorized]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/api/v1/stats");
+        console.log(response.data); // Replace with dynamic rendering logic
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
+  
+
   return (
     <>
       <BrowserRouter>
@@ -52,6 +66,8 @@ const App = () => {
           <Route path="/job/post" element={<PostJob />} />
           <Route path="/job/me" element={<MyJobs />} />
           <Route path="*" element={<NotFound />} />
+          {/* <Route path="/analysis" element={<Analysis />} /> */}
+
         </Routes>
         <Footer />
         <Toaster />
