@@ -18,8 +18,8 @@ const MyApplications = () => {
     const fetchApplications = async () => {
       try {
         const endpoint = user && user.role === "Employer"
-          ? "http://localhost:4000/api/v1/application/employer/getall"
-          : "http://localhost:4000/api/v1/application/jobseeker/getall";
+          ? "https://seekers-p1ph.onrender.com/api/v1/application/employer/getall"
+          : "https://seekers-p1ph.onrender.com/api/v1/application/jobseeker/getall";
         
         const { data } = await axios.get(endpoint, {
           withCredentials: true,
@@ -42,7 +42,7 @@ const MyApplications = () => {
   const deleteApplication = (id) => {
     try {
       axios
-        .delete(`http://localhost:4000/api/v1/application/delete/${id}`, {
+        .delete(`https://seekers-p1ph.onrender.com/api/v1/application/delete/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

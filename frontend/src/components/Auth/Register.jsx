@@ -32,7 +32,7 @@ const Register = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/register",
+        "https://seekers-p1ph.onrender.com/api/v1/user/register",
         { name, phone, email, role, password },
         {
           headers: {
@@ -52,7 +52,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/verify-otp",
+        "https://seekers-p1ph.onrender.com/api/v1/user/verify-otp",
         { email, otp },
         {
           headers: {

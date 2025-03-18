@@ -43,7 +43,7 @@ const Home = () => {
     const fetchAnalysis = async () => {
       try {
         console.log("Fetching role distribution...");
-        const response = await axios.get("http://localhost:4000/api/v1/analysis/role-distribution");
+        const response = await axios.get("https://seekers-p1ph.onrender.com/api/v1/analysis/role-distribution");
         console.log("Role Distribution Response:", response.data);
         setRoleDistribution(response.data.roles);
         console.log("Updated Role Distribution State:", response.data.roles);

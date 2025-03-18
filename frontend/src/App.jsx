@@ -24,7 +24,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/getuser",
+          "https://seekers-p1ph.onrender.com/api/v1/user/getuser",
           {
             withCredentials: true,
           }
@@ -41,7 +41,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/stats");
+        const response = await axios.get("https://seekers-p1ph.onrender.com/api/v1/stats");
         console.log(response.data); // Replace with dynamic rendering logic
       } catch (error) {
         console.error(error);
